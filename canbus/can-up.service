@@ -1,0 +1,13 @@
+[Unit]
+Description=Brings up the CAN interfaces on boot
+After=multi-user.target
+
+[Service]
+Restart=on-failure
+RestartSec=5
+Type=simple
+ExecStart=/usr/bin/bash /home/team204/tools/can_up.sh
+User=root
+
+[Install]
+WantedBy=multi-user.target
